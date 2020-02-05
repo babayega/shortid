@@ -245,7 +245,7 @@ func (sid *Shortid) Worker() uint {
 // NewAbc constructs a new instance of shuffled alphabet to be used for Id representation.
 func NewAbc(alphabet string, seed uint64) (Abc, error) {
 	runes := []rune(alphabet)
-	if len(runes) != len(DefaultABC) {
+	if len(runes) != len(alphabet) {
 		return Abc{}, fmt.Errorf("alphabet must contain %v unique characters", len(DefaultABC))
 	}
 	if nonUnique(runes) {
